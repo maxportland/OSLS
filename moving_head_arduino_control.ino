@@ -1,4 +1,3 @@
-#include <MultiStepper.h>
 #include <AccelStepper.h>
 
 const int tiltArmLeftPulsePin = 2;
