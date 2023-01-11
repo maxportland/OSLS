@@ -20,6 +20,8 @@ AccelStepper tiltArmLeft(AccelStepper::DRIVER, tiltArmLeftPulsePin, tiltArmLeftD
 AccelStepper tiltArmRight(AccelStepper::DRIVER, tiltArmRightPulsePin, tiltArmRightDirPin);
 AccelStepper panStepper(AccelStepper::DRIVER, panPulsePin, panDirPin);
 
+int incomingByte = 0;
+
 void setup() {
 
   Serial.begin(9600);
