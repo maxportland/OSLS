@@ -42,7 +42,6 @@ void setup() {
 
   tiltArmLeft.moveTo(300);
   tiltArmRight.moveTo(300);
-  panStepper.moveTo(300);
 
   String serialString;
 
@@ -53,6 +52,11 @@ void loop() {
   while(Serial.available()) {
     serialString = Serial.readString();
     Serial.println("Received:" + serialString);
+    if(serialString.startsWith("pan:") {
+      char * panDistance = strtok(serialString, ":");
+      panStepper.moveTo(strtonum(panDistance));
+      panStepper.run();
+    }
   }
 
   //tiltArmLeft.run();
