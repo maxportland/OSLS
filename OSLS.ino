@@ -52,7 +52,7 @@ void loop() {
 
   while(Serial.available()) {
     serialString = Serial.readString();
-    Serial.println(serialString);
+    Serial.println("Received:" + serialString);
   }
 
   //tiltArmLeft.run();
