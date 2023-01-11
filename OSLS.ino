@@ -20,7 +20,7 @@ AccelStepper tiltArmLeft(AccelStepper::DRIVER, tiltArmLeftPulsePin, tiltArmLeftD
 AccelStepper tiltArmRight(AccelStepper::DRIVER, tiltArmRightPulsePin, tiltArmRightDirPin);
 AccelStepper panStepper(AccelStepper::DRIVER, panPulsePin, panDirPin);
 
-int incomingByte = 0;
+String serialString;
 
 void setup() {
 
@@ -44,14 +44,15 @@ void setup() {
   tiltArmRight.moveTo(300);
   panStepper.moveTo(300);
 
+  String serialString;
+
 }
 
 void loop() {
 
-  if (Serial.available() > 0) {
-    incomingByte = Serial.read();
-    Serial.print("I received: ");
-    Serial.println(incomingByte, DEC);
+  while(Serial.available()) {
+    serialString = Serial.readString();
+    Serial.println(serialString);
   }
 
   //tiltArmLeft.run();
