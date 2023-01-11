@@ -19,7 +19,6 @@ const int accel = 200;
 AccelStepper tiltArmLeft(AccelStepper::DRIVER, tiltArmLeftPulsePin, tiltArmLeftDirPin);
 AccelStepper tiltArmRight(AccelStepper::DRIVER, tiltArmRightPulsePin, tiltArmRightDirPin);
 AccelStepper panStepper(AccelStepper::DRIVER, panPulsePin, panDirPin);
-MultiStepper bothTiltSteppers();
 
 void setup() {
 
