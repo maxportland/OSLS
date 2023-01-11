@@ -44,9 +44,9 @@ void setup() {
 
 void loop() {
 
-  tiltArmLeft.run();
-  tiltArmRight.run();
-  panStepper.run();
+  //tiltArmLeft.run();
+  //tiltArmRight.run();
+  //panStepper.run();
   if (tiltArmLeft.distanceToGo() == 0) { tiltArmLeft.stop(); tiltArmLeft.moveTo(-tiltArmLeft.targetPosition()); }
   if (tiltArmRight.distanceToGo() == 0) { tiltArmRight.stop(); tiltArmRight.moveTo(-tiltArmRight.targetPosition()); }
   if (panStepper.distanceToGo() == 0) { panStepper.stop(); panStepper.moveTo(-panStepper.targetPosition()); }
