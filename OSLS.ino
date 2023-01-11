@@ -22,6 +22,8 @@ AccelStepper panStepper(AccelStepper::DRIVER, panPulsePin, panDirPin);
 
 void setup() {
 
+  Serial.begin(9600);
+
   panStepper.setEnablePin(panEnablePin);
   panStepper.setMaxSpeed(100);
   panStepper.setSpeed(100);
@@ -43,6 +45,12 @@ void setup() {
 }
 
 void loop() {
+
+  if (Serial.available() > 0) {
+    incomingByte = Serial.read();
+    Serial.print("I received: ");
+    Serial.println(incomingByte, DEC);
+  }
 
   //tiltArmLeft.run();
   //tiltArmRight.run();
